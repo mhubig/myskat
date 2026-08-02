@@ -95,8 +95,10 @@ h1, h2 {
 
 /* Buttons wie aufgelegte Spielkarten */
 .btn-primary {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: 'Pirata One', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
   color: var(--red);
   background: var(--card);
   border: 2px solid var(--ink);
@@ -261,6 +263,12 @@ h1, h2 {
 @keyframes deal {
   from { transform: translateY(16px) rotate(-3deg); opacity: 0; }
   to   { transform: none; opacity: 1; }
+}
+
+.tap-hint {
+  font-size: 0.88rem;
+  color: rgba(233, 223, 201, 0.6);
+  text-align: center;
 }
 
 /* ---------- Ergebnis ---------- */

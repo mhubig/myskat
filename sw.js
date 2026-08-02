@@ -1,7 +1,7 @@
 'use strict';
 
 // Beim Deploy hochzählen, sonst hängt die alte Version im Cache (siehe CLAUDE.md)
-const VERSION = 'myskat-v5';
+const VERSION = 'myskat-v6';
 
 const ASSETS = [
   '.',
@@ -9,7 +9,8 @@ const ASSETS = [
   'style.css',
   'app.js',
   'manifest.webmanifest',
-  'icon.svg',
+  'icon-192.png',
+  'icon-512.png',
   'apple-touch-icon.png',
   'img/pushups.jpg',
   'img/jacks.jpg',
