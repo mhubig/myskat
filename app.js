@@ -254,7 +254,8 @@ function cardSVG(card) {
   const suit = SUITS[card.suit];
   const task = taskFor(card);
   const color = suit.red ? '#c22f2f' : '#2b2b2b';
-  const corner = `${card.value}${suit.sym}`;
+  const name = EXERCISES[task.exercise];
+  const nameSize = name.length > 10 ? 21 : 26;   // lange Namen müssen die Eck-Indizes freihalten
   return `
   <svg viewBox="0 0 240 336" xmlns="http://www.w3.org/2000/svg" role="img"
        aria-label="${task.reps} ${EXERCISES[task.exercise]}">
@@ -262,13 +263,13 @@ function cardSVG(card) {
     <rect x="14" y="14" width="212" height="308" rx="10" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.35"/>
     <text x="26" y="46" font-size="30" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
     <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
-    <g transform="rotate(180 214 290)">
-      <text x="214" y="272" font-size="30" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
-      <text x="214" y="300" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
+    <g transform="rotate(180 120 168)">
+      <text x="26" y="46" font-size="30" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
+      <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     </g>
     <g transform="translate(50 60)">${FIGURES[task.exercise](suit.sym, color)}</g>
     <text x="120" y="238" text-anchor="middle" font-size="52" font-weight="bold" fill="#2b2b2b">${task.reps}&#8202;&#215;</text>
-    <text x="120" y="278" text-anchor="middle" font-size="26" font-weight="600" fill="${color}">${EXERCISES[task.exercise]}</text>
+    <text x="120" y="278" text-anchor="middle" font-size="${nameSize}" font-weight="600" fill="${color}">${name}</text>
   </svg>`;
 }
 
@@ -468,6 +469,7 @@ if (saved && Date.now() < saved.endsAt) {
   renderHome();
 }
 
-if ('serviceWorker' in navigator) {
+// Kein Service Worker beim lokalen Entwickeln — der Cache würde jede Änderung verschlucken
+if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }

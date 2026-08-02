@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
   <title>MySkat — Skat-AMRAP</title>
   <meta name="description" content="Skat-AMRAP-Timer für die August-Challenge: 32 Karten, 10 Minuten, Bodyweight.">
-  <meta name="theme-color" content="#1d3a2f">
+  <meta name="theme-color" content="#7a1f2b">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -24,18 +24,20 @@
 
     <button id="btn-start" class="btn-primary">Workout starten</button>
 
-    <details class="rules">
-      <summary>Die Regeln</summary>
-      <ul>
-        <li>♥ Herz = Push-Ups</li>
-        <li>♦ Karo = Jumping Jacks</li>
-        <li>♠ Pik = Crunches</li>
-        <li>♣ Kreuz = Air Squats</li>
-        <li>Bube = 15 Burpees (egal welche Farbe)</li>
-        <li>7–10 = Zahl &middot; Dame = 12 &middot; König = 13 &middot; Ass = 1</li>
-        <li>10 Minuten, so viele Karten wie möglich.</li>
+    <div class="rules">
+      <h3>Die Regeln</h3>
+      <ul class="rules-suits">
+        <li><span class="suit red">♥</span> Push-Ups</li>
+        <li><span class="suit red">♦</span> Jumping Jacks</li>
+        <li><span class="suit black">♠</span> Crunches</li>
+        <li><span class="suit black">♣</span> Air Squats</li>
       </ul>
-    </details>
+      <p class="rules-values">
+        <strong>Bube = 15 Burpees</strong> — egal welche Farbe<br>
+        7–10 = Zahl &middot; Dame = 12 &middot; König = 13 &middot; Ass = 1<br>
+        10 Minuten. So viele Karten wie möglich.
+      </p>
+    </div>
   </section>
 
   <!-- Countdown: Misch-Animation + 3-2-1 -->
