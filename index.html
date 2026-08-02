@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>MySkat — Skat-AMRAP</title>
+  <meta name="description" content="Skat-AMRAP-Timer für die August-Challenge: 32 Karten, 10 Minuten, Bodyweight.">
+  <meta name="theme-color" content="#1d3a2f">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Home: Gesamtstatistik + Start -->
+  <section id="screen-home" class="screen active">
+    <header class="home-header">
+      <h1>MySkat</h1>
+      <p class="subtitle">Skat-AMRAP &middot; August-Challenge</p>
+    </header>
+
+    <div id="home-stats"></div>
+
+    <button id="btn-start" class="btn-primary">Workout starten</button>
+
+    <details class="rules">
+      <summary>Die Regeln</summary>
+      <ul>
+        <li>♥ Herz = Push-Ups</li>
+        <li>♦ Karo = Jumping Jacks</li>
+        <li>♠ Pik = Crunches</li>
+        <li>♣ Kreuz = Air Squats</li>
+        <li>Bube = 15 Burpees (egal welche Farbe)</li>
+        <li>7–10 = Zahl &middot; Dame = 12 &middot; König = 13 &middot; Ass = 1</li>
+        <li>10 Minuten, so viele Karten wie möglich.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Countdown: Misch-Animation + 3-2-1 -->
+  <section id="screen-countdown" class="screen">
+    <div class="shuffle-stage" aria-hidden="true">
+      <div class="mini-card c1"></div>
+      <div class="mini-card c2"></div>
+      <div class="mini-card c3"></div>
+    </div>
+    <div id="countdown-text">Mischen&hellip;</div>
+  </section>
+
+  <!-- Workout: Timer + Karte -->
+  <section id="screen-workout" class="screen">
+    <div class="workout-top">
+      <div id="timer">10:00</div>
+      <div id="progress">Karte 1/32 &middot; Runde 1</div>
+    </div>
+    <div id="card-area" role="button" aria-label="Karte geschafft — nächste Karte"></div>
+    <button id="btn-abort" class="btn-ghost">Abbrechen</button>
+  </section>
+
+  <!-- Ergebnis -->
+  <section id="screen-result" class="screen">
+    <h2>Zeit!</h2>
+    <div id="result-stats"></div>
+    <button id="btn-home" class="btn-primary">Fertig</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

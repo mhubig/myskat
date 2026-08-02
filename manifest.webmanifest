@@ -1,0 +1,15 @@
+{
+  "name": "MySkat — Skat-AMRAP",
+  "short_name": "MySkat",
+  "description": "Skat-AMRAP-Timer für die August-Challenge: 32 Karten, 10 Minuten, Bodyweight.",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1d3a2f",
+  "theme_color": "#1d3a2f",
+  "lang": "de",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
