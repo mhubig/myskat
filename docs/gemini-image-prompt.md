@@ -1,5 +1,12 @@
 # Bildgenerierungs-Prompts für die Kartenmotive (Gemini)
 
+Zwei Stil-Varianten: [Set A — Bilderbuch/Tenniel](#set-a--bilderbuch-tenniel)
+(flach, passt farblich exakt zur App) und
+[Set B — Tim-Burton-Look](#set-b--tim-burton-look) (cineastisch-düster,
+jeder Prompt komplett copy-paste-fertig).
+
+## Set A — Bilderbuch (Tenniel)
+
 Fünf Motive, eins pro Übung. Damit die Figuren konsistent aussehen: **alle fünf
 Bilder in derselben Chat-Session generieren** und ab dem zweiten Bild „the exact
 same character as before" referenzieren. Bei Ausreißern einzeln nachgenerieren.
@@ -52,6 +59,108 @@ ground, both arms extended straight forward for balance, focused expression.
 The character is doing a BURPEE JUMP: airborne mid-jump with arms stretched
 overhead, feet off the ground, a small shadow beneath, explosive dynamic pose,
 motion lines below the feet.
+```
+
+## Set B — Tim-Burton-Look
+
+Cineastisch-düstere Variante, angelehnt an die Kartensoldaten der Roten Königin
+aus Tim Burtons Alice-im-Wunderland-Verfilmung. Jeder Prompt ist vollständig
+ausformuliert — einfach einzeln kopieren und einfügen. Trotzdem gilt: alle fünf
+in **derselben** Session generieren hilft der Konsistenz zusätzlich.
+
+Hinweis zum Einbau: Dieser Stil ist dunkler als die Creme-Karten der App. Die
+Prompts verlangen deshalb einen ruhigen, hellen Pergament-Hintergrund mit
+sanfter Vignette, damit die Figuren auf dem Kartenblatt funktionieren.
+
+**1 — Push-Ups (Herz):**
+```text
+A cinematic dark-fantasy character illustration inspired by the gothic,
+whimsical aesthetic of Tim Burton's Alice in Wonderland film: a playing-card
+soldier of the Red Queen's army reimagined as a muscular CrossFit athlete. Its
+tall rectangular torso is a slightly weathered ivory playing card with ornate
+baroque corner flourishes and one large deep-red HEART symbol in the center.
+It has long, powerfully muscled arms and legs in dark segmented armor,
+oversized gauntlets, and a small pale head with big expressive eyes, faint
+dark eye shadow and a red fabric sweatband. Mood: whimsical yet slightly
+eerie, desaturated palette with deep crimson accents, soft theatrical rim
+light, a wisp of fog at the ground. The character is performing PUSH-UPS: low
+horizontal plank position, elbows bent, body rigid and straight, gritted
+determined expression. Full figure centered, plain light parchment background
+with a gentle dark vignette, no text, no watermark, square 1:1 format.
+```
+
+**2 — Jumping Jacks (Karo):**
+```text
+A cinematic dark-fantasy character illustration inspired by the gothic,
+whimsical aesthetic of Tim Burton's Alice in Wonderland film: a playing-card
+soldier of the Red Queen's army reimagined as a muscular CrossFit athlete. Its
+tall rectangular torso is a slightly weathered ivory playing card with ornate
+baroque corner flourishes and one large deep-red DIAMOND symbol in the center.
+It has long, powerfully muscled arms and legs in dark segmented armor,
+oversized gauntlets, and a small pale head with big expressive eyes, faint
+dark eye shadow and a red fabric sweatband. Mood: whimsical yet slightly
+eerie, desaturated palette with deep crimson accents, soft theatrical rim
+light, a wisp of fog at the ground. The character is performing JUMPING
+JACKS: caught mid-jump, legs spread wide, both arms raised high in a V above
+the head, gleeful manic grin, small motion streaks around hands and feet.
+Full figure centered, plain light parchment background with a gentle dark
+vignette, no text, no watermark, square 1:1 format.
+```
+
+**3 — Crunches (Pik):**
+```text
+A cinematic dark-fantasy character illustration inspired by the gothic,
+whimsical aesthetic of Tim Burton's Alice in Wonderland film: a playing-card
+soldier of the Red Queen's army reimagined as a muscular CrossFit athlete. Its
+tall rectangular torso is a slightly weathered ivory playing card with ornate
+baroque corner flourishes and one large ink-black SPADE symbol in the center.
+It has long, powerfully muscled arms and legs in dark segmented armor,
+oversized gauntlets, and a small pale head with big expressive eyes, faint
+dark eye shadow and a red fabric sweatband. Mood: whimsical yet slightly
+eerie, desaturated palette with deep crimson accents, soft theatrical rim
+light, a wisp of fog at the ground. The character is performing CRUNCHES:
+lying on its back on the misty ground, knees bent, upper body curled up
+toward the knees, arms reaching forward, straining clenched expression. Full
+figure centered, plain light parchment background with a gentle dark
+vignette, no text, no watermark, square 1:1 format.
+```
+
+**4 — Air Squats (Kreuz):**
+```text
+A cinematic dark-fantasy character illustration inspired by the gothic,
+whimsical aesthetic of Tim Burton's Alice in Wonderland film: a playing-card
+soldier of the Red Queen's army reimagined as a muscular CrossFit athlete. Its
+tall rectangular torso is a slightly weathered ivory playing card with ornate
+baroque corner flourishes and one large ink-black CLUB symbol in the center.
+It has long, powerfully muscled arms and legs in dark segmented armor,
+oversized gauntlets, and a small pale head with big expressive eyes, faint
+dark eye shadow and a red fabric sweatband. Mood: whimsical yet slightly
+eerie, desaturated palette with deep crimson accents, soft theatrical rim
+light, a wisp of fog at the ground. The character is performing AIR SQUATS:
+deep squat with thighs parallel to the ground, chest upright, both arms
+extended straight forward for balance, intensely focused expression. Full
+figure centered, plain light parchment background with a gentle dark
+vignette, no text, no watermark, square 1:1 format.
+```
+
+**5 — Burpees (Bube):**
+```text
+A cinematic dark-fantasy character illustration inspired by the gothic,
+whimsical aesthetic of Tim Burton's Alice in Wonderland film: a playing-card
+soldier of the Red Queen's army reimagined as a muscular CrossFit athlete —
+this one is the JACK, an elite soldier wearing a small ornate golden knight
+helmet with a red plume. Its tall rectangular torso is a slightly weathered
+ivory playing card with ornate baroque corner flourishes showing all four
+card suit symbols (heart, diamond, spade, club) arranged two by two in the
+center. It has long, powerfully muscled arms and legs in dark segmented
+armor, oversized gauntlets, and a small pale head with big expressive eyes
+and faint dark eye shadow. Mood: whimsical yet slightly eerie, desaturated
+palette with deep crimson accents, soft theatrical rim light, a wisp of fog
+at the ground. The character is performing a BURPEE JUMP: fully airborne,
+arms stretched overhead, feet off the ground, a small shadow and dust puff
+beneath, explosive dynamic pose. Full figure centered, plain light parchment
+background with a gentle dark vignette, no text, no watermark, square 1:1
+format.
 ```
 
 ## Einbau in die App
