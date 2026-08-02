@@ -62,4 +62,4 @@ python3 -m http.server 8000
 - Kartenmotive und Icon: generiert mit Google Gemini
   (Prompts in [docs/gemini-image-prompt.md](docs/gemini-image-prompt.md))
 - Schrift: [Pirata One](https://fonts.google.com/specimen/Pirata+One) (SIL Open Font License)
-- Challenge-Idee: die Coaches des CrossFit-Clubs 🖤
+- Challenge-Idee: die Coaches von [MyWay Athletics](https://www.myway-athletics.de) 🖤
