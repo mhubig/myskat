@@ -1,7 +1,7 @@
 'use strict';
 
 // Beim Deploy hochzählen, sonst hängt die alte Version im Cache (siehe CLAUDE.md)
-const VERSION = 'myskat-v2';
+const VERSION = 'myskat-v3';
 
 const ASSETS = [
   '.',

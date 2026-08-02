@@ -256,15 +256,18 @@ function cardSVG(card) {
   const color = suit.red ? '#c22f2f' : '#2b2b2b';
   const name = EXERCISES[task.exercise];
   const nameSize = name.length > 10 ? 21 : 26;   // lange Namen müssen die Eck-Indizes freihalten
+  const twoDigit = card.value.length > 1;        // die „10" braucht eine kompaktere Ecke
+  const vSize = twoDigit ? 24 : 30;
+  const vX = twoDigit ? 29 : 26;
   return `
   <svg viewBox="0 0 240 336" xmlns="http://www.w3.org/2000/svg" role="img"
        aria-label="${task.reps} ${EXERCISES[task.exercise]}">
     <rect x="4" y="4" width="232" height="328" rx="18" fill="#fffdf5" stroke="#2b2b2b" stroke-width="4"/>
     <rect x="14" y="14" width="212" height="308" rx="10" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.35"/>
-    <text x="26" y="46" font-size="30" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
+    <text x="${vX}" y="46" font-size="${vSize}" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
     <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     <g transform="rotate(180 120 168)">
-      <text x="26" y="46" font-size="30" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
+      <text x="${vX}" y="46" font-size="${vSize}" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
       <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     </g>
     <g transform="translate(50 60)">${FIGURES[task.exercise](suit.sym, color)}</g>
@@ -453,6 +456,12 @@ function abortWorkout() {
    ============================================================ */
 
 document.getElementById('btn-start').addEventListener('click', startCountdown);
+document.getElementById('btn-reset').addEventListener('click', () => {
+  if (!confirm('Wirklich alle Workouts und Statistiken löschen? Das kann nicht rückgängig gemacht werden.')) return;
+  localStorage.removeItem(KEY_WORKOUTS);
+  localStorage.removeItem(KEY_CURRENT);
+  renderHome();
+});
 document.getElementById('btn-abort').addEventListener('click', abortWorkout);
 document.getElementById('btn-home').addEventListener('click', () => { renderHome(); showScreen('home'); });
 el.cardArea.addEventListener('click', onCardTap);
