@@ -1,13 +1,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #7a1f2b;        /* Oxblood — Herzkönigin */
-  --bg-deep: #5e1620;   /* Vertiefungen */
-  --paper: #faf3e4;     /* Creme-Papier */
-  --card: #fffdf5;      /* helleres Kartenblatt */
+  --bg: #45131a;        /* getrocknetes Königinnen-Rot, entsättigt (Burton) */
+  --bg-deep: #2b0b10;   /* Vertiefungen */
+  --paper: #e9dfc9;     /* Pergament */
+  --card: #f2ead8;      /* Kartenblatt, leicht gealtert */
   --ink: #26201c;       /* Tinte */
-  --red: #c22f2f;       /* Spielkarten-Rot */
-  --gold: #e8b64c;      /* Akzent — nur sparsam */
+  --red: #9e2b33;       /* tiefes Crimson */
+  --gold: #c9a24b;      /* Antik-Gold — nur sparsam */
 }
 
 html, body {
@@ -18,7 +18,7 @@ html, body {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background:
-    radial-gradient(circle at 50% 15%, #8d2735, var(--bg) 55%, var(--bg-deep) 100%);
+    radial-gradient(circle at 50% 15%, #58202a, var(--bg) 55%, var(--bg-deep) 100%);
   color: var(--paper);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -196,7 +196,7 @@ h1, h2 {
   border: 3px solid var(--ink);
   border-radius: 12px;
   background-image: repeating-linear-gradient(45deg,
-    rgba(194, 47, 47, 0.3) 0 8px, transparent 8px 16px);
+    rgba(158, 43, 51, 0.35) 0 8px, transparent 8px 16px);
 }
 .c1 { animation: shuf1 0.9s ease-in-out infinite; }
 .c2 { animation: shuf2 0.9s ease-in-out infinite; }

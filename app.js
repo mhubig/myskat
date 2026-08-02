@@ -167,93 +167,25 @@ document.addEventListener('visibilitychange', () => {
 });
 
 /* ============================================================
-   SVG-Karten: muskulöse Kartensoldaten (Alice im Wunderland)
+   SVG-Karten: Tim-Burton-Kartensoldaten (Gemini-generiert,
+   Prompts in docs/gemini-image-prompt.md, Originale in img/*.png)
    ============================================================ */
 
-const LIMB = 'fill="none" stroke="#2b2b2b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"';
-const MUSCLE = 'fill="#2b2b2b"';
-
-// Kopf mit Schweißband
-function head(cx, cy, r = 10) {
-  return `
-    <circle cx="${cx}" cy="${cy}" r="${r}" fill="#ffe3c2" stroke="#2b2b2b" stroke-width="3"/>
-    <path d="M ${cx - r} ${cy - r * 0.35} A ${r} ${r} 0 0 1 ${cx + r} ${cy - r * 0.35}
-             L ${cx + r * 0.9} ${cy - r * 0.05} A ${r * 0.9} ${r * 0.9} 0 0 0 ${cx - r * 0.9} ${cy - r * 0.05} Z"
-          fill="#d43a3a"/>`;
-}
-
-// Torso = Mini-Spielkarte mit Farbsymbol (der Kartensoldat trägt seine Farbe)
-function torso(cx, cy, w, h, rotation, suitSym, suitColor) {
-  return `
-    <g transform="rotate(${rotation} ${cx} ${cy})">
-      <rect x="${cx - w / 2}" y="${cy - h / 2}" width="${w}" height="${h}" rx="5"
-            fill="#fffdf5" stroke="#2b2b2b" stroke-width="3"/>
-      <text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central"
-            font-size="${Math.min(w, h) * 0.62}" fill="${suitColor}">${suitSym}</text>
-    </g>`;
-}
-
-// Die 5 Posen (viewBox 0 0 140 120)
-const FIGURES = {
-  pushups: (sym, col) => `
-    <line x1="14" y1="104" x2="126" y2="104" stroke="#2b2b2b" stroke-width="3" stroke-linecap="round"/>
-    <path d="M 20 96 L 48 78" ${LIMB}/>
-    <path d="M 88 74 L 100 90 L 94 102" ${LIMB}/>
-    <path d="M 78 76 L 88 92 L 82 102" ${LIMB}/>
-    <circle cx="94" cy="83" r="6" ${MUSCLE}/>
-    ${torso(66, 68, 48, 28, -8, sym, col)}
-    ${head(104, 58)}
-    <path d="M 118 44 l 0 -8 M 126 52 l 8 -4" stroke="#2b2b2b" stroke-width="2.5" stroke-linecap="round" fill="none"/>`,
-
-  jacks: (sym, col) => `
-    <path d="M 58 52 L 44 34 L 40 20" ${LIMB}/>
-    <path d="M 82 52 L 96 34 L 100 20" ${LIMB}/>
-    <circle cx="46" cy="35" r="6" ${MUSCLE}/>
-    <circle cx="94" cy="35" r="6" ${MUSCLE}/>
-    <path d="M 62 82 L 50 96 L 44 112" ${LIMB}/>
-    <path d="M 78 82 L 90 96 L 96 112" ${LIMB}/>
-    ${torso(70, 64, 32, 40, 0, sym, col)}
-    ${head(70, 32)}
-    <path d="M 28 26 a 26 26 0 0 1 8 -12 M 112 26 a 26 26 0 0 0 -8 -12"
-          stroke="#2b2b2b" stroke-width="2.5" stroke-linecap="round" fill="none"/>`,
-
-  crunches: (sym, col) => `
-    <line x1="14" y1="106" x2="126" y2="106" stroke="#2b2b2b" stroke-width="3" stroke-linecap="round"/>
-    <path d="M 80 98 L 98 74 L 110 102" ${LIMB}/>
-    <path d="M 50 70 L 74 66 L 88 70" ${LIMB}/>
-    <circle cx="66" cy="66" r="6" ${MUSCLE}/>
-    ${torso(60, 84, 44, 28, -32, sym, col)}
-    ${head(40, 60)}
-    <path d="M 26 46 l -4 -7 M 34 42 l 0 -8" stroke="#2b2b2b" stroke-width="2.5" stroke-linecap="round" fill="none"/>`,
-
-  squats: (sym, col) => `
-    <line x1="14" y1="108" x2="126" y2="108" stroke="#2b2b2b" stroke-width="3" stroke-linecap="round"/>
-    <path d="M 80 84 L 52 86 L 58 108" ${LIMB}/>
-    <path d="M 88 86 L 62 90 L 68 108" ${LIMB}/>
-    <path d="M 84 56 L 56 52 L 34 54" ${LIMB}/>
-    <circle cx="62" cy="52" r="6" ${MUSCLE}/>
-    ${torso(86, 66, 32, 40, 10, sym, col)}
-    ${head(92, 38)}`,
-
-  burpees: (sym, col) => `
-    <line x1="14" y1="112" x2="126" y2="112" stroke="#2b2b2b" stroke-width="3" stroke-linecap="round"/>
-    <ellipse cx="70" cy="112" rx="22" ry="3.5" fill="#2b2b2b" opacity="0.25"/>
-    <path d="M 60 46 L 48 28 L 44 14" ${LIMB}/>
-    <path d="M 80 46 L 92 28 L 96 14" ${LIMB}/>
-    <circle cx="50" cy="29" r="6" ${MUSCLE}/>
-    <circle cx="90" cy="29" r="6" ${MUSCLE}/>
-    <path d="M 64 76 L 58 90 L 64 98" ${LIMB}/>
-    <path d="M 76 76 L 82 90 L 76 98" ${LIMB}/>
-    ${torso(70, 58, 30, 38, 0, sym, col)}
-    ${head(70, 26)}
-    <path d="M 44 104 l -6 4 M 96 104 l 6 4 M 70 102 l 0 5"
-          stroke="#2b2b2b" stroke-width="2.5" stroke-linecap="round" fill="none"/>`,
+const IMAGES = {
+  pushups:  'img/pushups.jpg',
+  jacks:    'img/jacks.jpg',
+  crunches: 'img/crunches.jpg',
+  squats:   'img/squats.jpg',
+  burpees:  'img/burpees.jpg',
 };
+
+const INK = '#26201c';
+const RED = '#9e2b33';
 
 function cardSVG(card) {
   const suit = SUITS[card.suit];
   const task = taskFor(card);
-  const color = suit.red ? '#c22f2f' : '#2b2b2b';
+  const color = suit.red ? RED : INK;
   const name = EXERCISES[task.exercise];
   const nameSize = name.length > 10 ? 21 : 26;   // lange Namen müssen die Eck-Indizes freihalten
   const twoDigit = card.value.length > 1;        // die „10" braucht eine kompaktere Ecke
@@ -261,18 +193,23 @@ function cardSVG(card) {
   const vX = twoDigit ? 29 : 26;
   return `
   <svg viewBox="0 0 240 336" xmlns="http://www.w3.org/2000/svg" role="img"
-       aria-label="${task.reps} ${EXERCISES[task.exercise]}">
-    <rect x="4" y="4" width="232" height="328" rx="18" fill="#fffdf5" stroke="#2b2b2b" stroke-width="4"/>
-    <rect x="14" y="14" width="212" height="308" rx="10" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.35"/>
+       aria-label="${task.reps} ${name}">
+    <defs>
+      <clipPath id="portrait"><rect x="42" y="52" width="156" height="156" rx="10"/></clipPath>
+    </defs>
+    <rect x="4" y="4" width="232" height="328" rx="18" fill="#f2ead8" stroke="${INK}" stroke-width="4"/>
+    <rect x="14" y="14" width="212" height="308" rx="10" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.4"/>
     <text x="${vX}" y="46" font-size="${vSize}" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
     <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     <g transform="rotate(180 120 168)">
       <text x="${vX}" y="46" font-size="${vSize}" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
       <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     </g>
-    <g transform="translate(50 60)">${FIGURES[task.exercise](suit.sym, color)}</g>
-    <text x="120" y="238" text-anchor="middle" font-size="52" font-weight="bold" fill="#2b2b2b">${task.reps}&#8202;&#215;</text>
-    <text x="120" y="278" text-anchor="middle" font-size="${nameSize}" font-weight="600" fill="${color}">${name}</text>
+    <image href="${IMAGES[task.exercise]}" x="42" y="52" width="156" height="156"
+           clip-path="url(#portrait)" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="42" y="52" width="156" height="156" rx="10" fill="none" stroke="${INK}" stroke-width="2.5"/>
+    <text x="120" y="248" text-anchor="middle" font-size="52" font-weight="bold" fill="${INK}">${task.reps}&#8202;&#215;</text>
+    <text x="120" y="284" text-anchor="middle" font-size="${nameSize}" font-weight="600" fill="${color}">${name}</text>
   </svg>`;
 }
 

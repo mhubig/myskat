@@ -1,7 +1,7 @@
 'use strict';
 
 // Beim Deploy hochzählen, sonst hängt die alte Version im Cache (siehe CLAUDE.md)
-const VERSION = 'myskat-v3';
+const VERSION = 'myskat-v4';
 
 const ASSETS = [
   '.',
@@ -11,6 +11,11 @@ const ASSETS = [
   'manifest.webmanifest',
   'icon.svg',
   'apple-touch-icon.png',
+  'img/pushups.jpg',
+  'img/jacks.jpg',
+  'img/crunches.jpg',
+  'img/squats.jpg',
+  'img/burpees.jpg',
 ];
 
 self.addEventListener('install', (event) => {

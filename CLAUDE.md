@@ -22,8 +22,11 @@ Einstellungen. Wenn ein Feature verzichtbar ist, ist es verzichtbar.
 - **Minimale PWA:** `manifest.webmanifest` + kleiner Service Worker (`sw.js`,
   cache-first). Beim Deploy die `VERSION`-Konstante in `sw.js` hochzählen,
   sonst hängt die alte Version im Cache.
-- **Grafiken sind hand-codierte Inline-SVGs** (muskulöse Alice-im-Wunderland-
-  Kartensoldaten, ein Motiv pro Übung), keine Bilddateien für die Karten.
+- **Kartenmotive sind Gemini-generierte Bilder** im Tim-Burton-Stil (Prompts:
+  `docs/gemini-image-prompt.md`). Originale liegen als `img/*.png` (1024px),
+  die App nutzt web-optimierte `img/*.jpg` (640px, via
+  `sips -Z 640 -s format jpeg -s formatOptions 78`). Der Kartenrahmen
+  drumherum bleibt generiertes Inline-SVG in `cardSVG()`.
 - **Persistenz:** ausschließlich `localStorage`. Gespeichert wird jedes
   abgeschlossene Workout als Roh-Datensatz; die UI zeigt nur Summen.
   Keys: `myskat.workouts` (Array), `myskat.current` (laufendes Workout).
