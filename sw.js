@@ -1,7 +1,7 @@
 'use strict';
 
 // Beim Deploy hochzählen, sonst hängt die alte Version im Cache (siehe CLAUDE.md)
-const VERSION = 'myskat-v4';
+const VERSION = 'myskat-v5';
 
 const ASSETS = [
   '.',
@@ -16,6 +16,7 @@ const ASSETS = [
   'img/crunches.jpg',
   'img/squats.jpg',
   'img/burpees.jpg',
+  'fonts/PirataOne-Regular.ttf',
 ];
 
 self.addEventListener('install', (event) => {

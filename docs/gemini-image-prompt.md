@@ -163,6 +163,29 @@ background with a gentle dark vignette, no text, no watermark, square 1:1
 format.
 ```
 
+## App-Icon (Tim-Burton-Look)
+
+Für Homescreen-Icons gilt: ein einziges, fettes Motiv, das auch bei 60 px noch
+lesbar ist — keine Szene, keine Details am Rand (iOS/Android runden die Ecken
+selbst ab, deshalb vollflächig und mittig komponieren).
+
+```text
+A mobile app icon in the gothic, whimsical aesthetic of Tim Burton's Alice in
+Wonderland film. Centered composition: a slightly weathered ivory playing
+card with ornate baroque corner flourishes and one large deep-red HEART
+symbol in the center, gripped from both sides by two short, extremely
+muscular arms in dark segmented armor with oversized gauntlets, flexing their
+biceps. Background: deep desaturated dried-blood crimson (#45131a) with a
+subtle dark vignette, a faint wisp of fog at the bottom. Bold, simple,
+high-contrast composition that stays readable at small sizes, single focal
+element, no text, no border, no rounded corners, full-bleed square 1:1
+format.
+```
+
+Das fertige Bild als `img/icon-1024.png` ablegen — daraus werden dann
+`icon.svg`-Ersatz, `apple-touch-icon.png` (180 px) und die Manifest-Icons
+(512 px, maskable) erzeugt.
+
 ## Einbau in die App
 
 Die generierten PNGs (freigestellt oder mit Creme-Hintergrund) nach

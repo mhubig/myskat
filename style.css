@@ -1,5 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+@font-face {
+  font-family: 'Pirata One';
+  src: url('fonts/PirataOne-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
 :root {
   --bg: #45131a;        /* getrocknetes Königinnen-Rot, entsättigt (Burton) */
   --bg-deep: #2b0b10;   /* Vertiefungen */
@@ -37,9 +43,9 @@ body {
 .screen.active { display: flex; }
 
 h1, h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  letter-spacing: 0.5px;
+  font-family: 'Pirata One', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 
 /* ---------- Home ---------- */
@@ -124,10 +130,10 @@ h1, h2 {
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 .rules h3 {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.05rem;
+  font-family: 'Pirata One', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
   text-align: center;
   color: var(--red);
   margin-bottom: 10px;
@@ -221,8 +227,7 @@ h1, h2 {
 }
 
 #countdown-text {
-  font-family: Georgia, serif;
-  font-style: italic;
+  font-family: 'Pirata One', Georgia, serif;
   font-size: 4rem;
   color: var(--paper);
   text-shadow: 0 2px 0 rgba(0,0,0,.3);

@@ -189,8 +189,9 @@ function cardSVG(card) {
   const name = EXERCISES[task.exercise];
   const nameSize = name.length > 10 ? 21 : 26;   // lange Namen müssen die Eck-Indizes freihalten
   const twoDigit = card.value.length > 1;        // die „10" braucht eine kompaktere Ecke
-  const vSize = twoDigit ? 24 : 30;
+  const vSize = twoDigit ? 26 : 32;
   const vX = twoDigit ? 29 : 26;
+  const GOTHIC = `font-family="'Pirata One', Georgia, serif"`;
   return `
   <svg viewBox="0 0 240 336" xmlns="http://www.w3.org/2000/svg" role="img"
        aria-label="${task.reps} ${name}">
@@ -199,17 +200,17 @@ function cardSVG(card) {
     </defs>
     <rect x="4" y="4" width="232" height="328" rx="18" fill="#f2ead8" stroke="${INK}" stroke-width="4"/>
     <rect x="14" y="14" width="212" height="308" rx="10" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.4"/>
-    <text x="${vX}" y="46" font-size="${vSize}" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
+    <text x="${vX}" y="46" font-size="${vSize}" ${GOTHIC} fill="${color}" text-anchor="middle">${card.value}</text>
     <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     <g transform="rotate(180 120 168)">
-      <text x="${vX}" y="46" font-size="${vSize}" font-weight="bold" fill="${color}" text-anchor="middle">${card.value}</text>
+      <text x="${vX}" y="46" font-size="${vSize}" ${GOTHIC} fill="${color}" text-anchor="middle">${card.value}</text>
       <text x="26" y="74" font-size="26" fill="${color}" text-anchor="middle">${suit.sym}</text>
     </g>
     <image href="${IMAGES[task.exercise]}" x="42" y="52" width="156" height="156"
            clip-path="url(#portrait)" preserveAspectRatio="xMidYMid slice"/>
     <rect x="42" y="52" width="156" height="156" rx="10" fill="none" stroke="${INK}" stroke-width="2.5"/>
-    <text x="120" y="248" text-anchor="middle" font-size="52" font-weight="bold" fill="${INK}">${task.reps}&#8202;&#215;</text>
-    <text x="120" y="284" text-anchor="middle" font-size="${nameSize}" font-weight="600" fill="${color}">${name}</text>
+    <text x="120" y="262" text-anchor="middle" font-size="54" ${GOTHIC} fill="${INK}">${task.reps}&#8202;&#215;</text>
+    <text x="120" y="298" text-anchor="middle" font-size="${nameSize + 2}" ${GOTHIC} fill="${color}">${name}</text>
   </svg>`;
 }
 
