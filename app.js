@@ -153,18 +153,38 @@ function signalTimeUp() {
    ============================================================ */
 
 async function acquireWakeLock() {
+  if (wakeLock && !wakeLock.released) return;
   try {
-    if ('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen');
-  } catch (e) { /* kein Wake Lock — nicht schlimm */ }
+    if ('wakeLock' in navigator) {
+      const lock = await navigator.wakeLock.request('screen');
+      wakeLock = lock;
+      // iOS gibt den Lock auch ohne Sichtbarkeitswechsel frei (Dimmen,
+      // Systementscheidung) — dann sofort neu holen, solange das Workout läuft.
+      // Bei manueller Freigabe ist wakeLock schon null → kein Re-Acquire.
+      lock.addEventListener('release', () => {
+        if (wakeLock !== lock) return;
+        wakeLock = null;
+        if (current && Date.now() < current.endsAt && document.visibilityState === 'visible') {
+          acquireWakeLock();
+        }
+      });
+    }
+  } catch (e) { console.warn('Wake Lock:', e); }
 }
 
 function releaseWakeLock() {
   if (wakeLock) { wakeLock.release().catch(() => {}); wakeLock = null; }
 }
 
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible' && current) acquireWakeLock();
-});
+function reacquireWakeLock() {
+  if (document.visibilityState === 'visible' && current && Date.now() < current.endsAt) {
+    acquireWakeLock();
+  }
+}
+
+document.addEventListener('visibilitychange', reacquireWakeLock);
+window.addEventListener('pageshow', reacquireWakeLock);
+window.addEventListener('focus', reacquireWakeLock);
 
 /* ============================================================
    SVG-Karten: Tim-Burton-Kartensoldaten (Gemini-generiert,
@@ -302,6 +322,7 @@ function renderResult(record) {
 
 function startCountdown() {
   ensureAudio();
+  acquireWakeLock();   // innerhalb der User-Geste anfordern — am zuverlässigsten
   showScreen('countdown');
   el.countdownText.textContent = 'Mischen…';
   const steps = [
