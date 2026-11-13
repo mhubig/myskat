@@ -48,7 +48,7 @@ niemand Zeit ([warum?](docs/adr/0001-deck-wiederholt-sich-in-fester-reihenfolge.
 
 Vanilla HTML/CSS/JS ohne Build-Step und ohne Dependencies — deployt wird der
 `main`-Branch direkt über GitHub Pages. Details in [CLAUDE.md](CLAUDE.md),
-Fachbegriffe in [CONTEXT.md](CONTEXT.md).
+Fachbegriffe in [GLOSSARY.md](GLOSSARY.md).
 
 Lokal entwickeln:
 

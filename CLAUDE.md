@@ -4,7 +4,7 @@ Onepage-Web-App für den AMRAP-Teil der August-Challenge eines CrossFit-Clubs:
 Ein 32-Blatt-Skat-Deck bestimmt Bodyweight-Übungen und Wiederholungen, ein
 10-Minuten-Timer läuft, Ergebnisse werden lokal im Browser gespeichert.
 
-Die Fachbegriffe und Spielregeln stehen in [CONTEXT.md](./CONTEXT.md) — dort
+Die Fachbegriffe und Spielregeln stehen in [GLOSSARY.md](./GLOSSARY.md) — dort
 nachschlagen, bevor Regeln implementiert oder geändert werden.
 Architektur-Entscheidungen stehen in [docs/adr/](./docs/adr/).
 
